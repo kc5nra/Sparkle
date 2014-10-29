@@ -19,6 +19,7 @@
     NSParameterAssert(host);
 
     // Prevent malicious downgrades
+    /*
     if (![[[NSBundle bundleWithIdentifier:SUBundleIdentifier] infoDictionary][SUEnableAutomatedDowngradesKey] boolValue]) {
         if ([comparator compareVersion:[host version] toVersion:[[NSBundle bundleWithPath:path] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey]] == NSOrderedDescending) {
             NSString *errorMessage = [NSString stringWithFormat:@"Sparkle Updater: Possible attack in progress! Attempting to \"upgrade\" from %@ to %@. Aborting update.", [host version], [[NSBundle bundleWithPath:path] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey]];
@@ -27,7 +28,7 @@
             return;
         }
     }
-
+    */
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSError *error = nil;
         NSString *oldPath = [host bundlePath];
