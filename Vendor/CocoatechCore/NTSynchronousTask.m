@@ -5,12 +5,9 @@
 //  Created by Steve Gehrman on 9/29/05.
 //  Copyright 2005 Steve Gehrman. All rights reserved.
 //
+#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-#import "SUUpdater.h"
-
-#import "SUAppcast.h"
-#import "SUAppcastItem.h"
-#import "SUVersionComparisonProtocol.h"
 #import "NTSynchronousTask.h"
 
 @interface NTSynchronousTask ()
