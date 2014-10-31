@@ -2,16 +2,30 @@ cmake_minimum_required(VERSION 2.8)
 
 project(BinaryDelta)
 
-set(CMAKE_C_FLAGS "-x objective-c")
-
-find_library(COCOA Cocoa)
-find_library(FOUNDATION Foundation)
 find_library(BZ2 bz2)
 find_library(XAR xar)
-
-include_directories(
-    ${COCOA}
-    ${FOUNDATION})
+find_library(CCRYPTO commonCrypto)
+if (APPLE)
+    find_library(FOUNDATION Foundation)
+    include_directories(
+        ${FOUNDATION})
+    set(OBJC_LIBRARIES ${FOUNDATION})
+else(APPLE)
+    execute_process(COMMAND gnustep-config --objc-flags
+        OUTPUT_VARIABLE OBJC_COMPILER_FLAGS_DIRTY
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
+    execute_process(COMMAND gnustep-config --base-libs
+        OUTPUT_VARIABLE OBJC_LINKER_FLAGS
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
+    #string(REPLACE "-fexec-charset=UTF-8" "" OBJC_COMPILER_FLAGS ${OBJC_COMPILER_FLAGS_DIRTY})
+    set(CMAKE_C_FLAGS
+        "${CMAKE_C_FLAGS} ${OBJC_COMPILER_FLAGS} -fobjc-nonfragile-abi -fobjc-arc -fconstant-string-class=NSConstantString")
+    
+    set(CMAKE_EXE_LINKER_FLAGS
+        "${CMAKE_EXE_LINKER_FLAGS} ${OBJC_LINKER_FLAGS}")
+    set(OBJC_LIBRARIES gnustep-base objc m)
+    include_directories(/usr/local/include/GNUstep)
+endif(APPLE)
 
 set(BinaryDelta_SOURCE_FILES 
     Sparkle/SUBinaryDeltaApply.m
@@ -19,8 +33,10 @@ set(BinaryDelta_SOURCE_FILES
     Sparkle/SUBinaryDeltaTool.m
     Vendor/bsdiff/bsdiff.c
     Vendor/bsdiff/bspatch.c
-    Vendor/CocoatechCore/NTSynchronousTask.m
 )
+
+set_source_files_properties(
+    ${BinaryDelta_SOURCE_FILES} PROPERTIES LANGUAGE C)
 
 set(BinaryDelta_HEADER_FILES 
     Sparkle/SUBinaryDeltaApply.h
@@ -38,8 +54,8 @@ add_executable(
 )
 
 target_link_libraries(BinaryDelta
-    ${COCOA}
-    ${FOUNDATION}
+    ${OBJC_LIBRARIES}    
     ${BZ2}
     ${XAR}
+    ${CCRYPTO}
 )

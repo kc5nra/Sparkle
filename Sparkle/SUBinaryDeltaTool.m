@@ -83,7 +83,7 @@ static NSString *temporaryPatchFile(NSString *patchFile)
     return [NSString stringWithFormat:@"%@/.%@.tmp", directory, file];
 }
 
-static BOOL shouldSkipDeltaCompression(NSString * __unused key, NSDictionary* originalInfo, NSDictionary *newInfo)
+static BOOL shouldSkipDeltaCompression(NSString * key, NSDictionary* originalInfo, NSDictionary *newInfo)
 {
     unsigned long long fileSize = [newInfo[@"size"] unsignedLongLongValue];
 	if (fileSize < 4096) {
@@ -101,7 +101,7 @@ static BOOL shouldSkipDeltaCompression(NSString * __unused key, NSDictionary* or
     return NO;
 }
 
-static BOOL shouldDeleteThenExtract(NSString * __unused key, NSDictionary* originalInfo, NSDictionary *newInfo)
+static BOOL shouldDeleteThenExtract(NSString * key, NSDictionary* originalInfo, NSDictionary *newInfo)
 {
 	if (!originalInfo) {
         return NO;
@@ -114,7 +114,7 @@ static BOOL shouldDeleteThenExtract(NSString * __unused key, NSDictionary* origi
     return NO;
 }
 
-int main(int __unused argc, char __unused *argv[])
+int main(int argc, char *argv[])
 {
     @autoreleasepool {
         NSArray *args = [[NSProcessInfo processInfo] arguments];
