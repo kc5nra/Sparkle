@@ -129,8 +129,15 @@
 
     SUAppcastItem *item = nil;
 
+    bool delegateWithDelta = [[self.updater delegate] respondsToSelector:@selector(bestValidUpdateWithDeltasInAppcast:forUpdater:)];
+    bool delegateSelected = [[self.updater delegate] respondsToSelector:@selector(bestValidUpdateInAppcast:forUpdater:)];
+
     // Now we have to find the best valid update in the appcast.
-    if ([[self.updater delegate] respondsToSelector:@selector(bestValidUpdateInAppcast:forUpdater:)]) // Does the delegate want to handle it?
+    if (delegateWithDelta)
+    {
+        item = [[self.updater delegate] bestValidUpdateWithDeltasInAppcast:ac forUpdater:self.updater];
+    }
+    else if (delegateSelected) // Does the delegate want to handle it?
     {
         item = [[self.updater delegate] bestValidUpdateInAppcast:ac forUpdater:self.updater];
 	}
@@ -141,7 +148,9 @@
         do {
             item = [updateEnumerator nextObject];
         } while (item && ![self hostSupportsItem:item]);
+    }
 
+    if ((delegateWithDelta || !delegateSelected)) {
         SUAppcastItem *deltaUpdateItem = [item deltaUpdates][[self.host version]];
         if (deltaUpdateItem && [self hostSupportsItem:deltaUpdateItem]) {
             self.nonDeltaUpdateItem = item;

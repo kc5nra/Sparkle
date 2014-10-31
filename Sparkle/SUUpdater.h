@@ -193,6 +193,8 @@ SU_EXPORT extern NSString *const SUUpdaterAppcastNotificationKey;
  */
 - (SUAppcastItem *)bestValidUpdateInAppcast:(SUAppcast *)appcast forUpdater:(SUUpdater *)updater;
 
+- (SUAppcastItem *)bestValidUpdateWithDeltasInAppcast:(SUAppcast *)appcast forUpdater:(SUUpdater *)updater;
+
 /*!
     Called when a valid update is found by the update driver.
 
