@@ -291,7 +291,7 @@ int bsdiff(int argc, char *argv[])
 
     /* Do a suffix sort on the old file. */
     I[0] = oldsize;
-    sais(oldp, I + 1, oldsize);
+    sais(old, I + 1, oldsize);
     //qsufsort(I, V, old, oldsize);
 
     //free(V);
