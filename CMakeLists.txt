@@ -33,6 +33,7 @@ set(BinaryDelta_SOURCE_FILES
     Sparkle/SUBinaryDeltaTool.m
     Vendor/bsdiff/bsdiff.c
     Vendor/bsdiff/bspatch.c
+    Vendor/bsdiff/sais.c
 )
 
 set_source_files_properties(
@@ -41,6 +42,7 @@ set_source_files_properties(
 set(BinaryDelta_HEADER_FILES 
     Sparkle/SUBinaryDeltaApply.h
     Sparkle/SUBinaryDeltaCommon.h
+    Vendor/bsdiff/sais.h
 )
 
 include_directories(

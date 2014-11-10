@@ -37,6 +37,8 @@ __FBSDID("$FreeBSD: src/usr.bin/bsdiff/bsdiff/bsdiff.c, v 1.1 2005/08/06 01:59:0
 #include <string.h>
 #include <unistd.h>
 
+#include "sais.h"
+
 #define MIN(x, y) (((x)<(y)) ? (x) : (y))
 
 static void split(off_t *I, off_t *V, off_t start, off_t len, off_t h)
@@ -253,7 +255,7 @@ int bsdiff(int argc, char *argv[])
     int fd;
     u_char *old,*new;           /* contents of old, new files */
     off_t oldsize, newsize;     /* length of old, new files */
-    off_t *I,*V;                /* arrays used for suffix sort; I is ordering */
+    off_t *I;//,*V;                /* arrays used for suffix sort; I is ordering */
     off_t scan;                 /* position of current match in old file */
     off_t pos;                  /* position of current match in new file */
     off_t len;                  /* length of current match */
@@ -283,14 +285,16 @@ int bsdiff(int argc, char *argv[])
         (close(fd) == -1))
         err(1,"%s", argv[1]);
 
-    if (((I = malloc((oldsize + 1) * sizeof(off_t))) == NULL) ||
-        ((V = malloc((oldsize + 1) * sizeof(off_t))) == NULL))
+    if (((I = malloc((oldsize + 1) * sizeof(off_t))) == NULL) /*||
+        ((V = malloc((oldsize + 1) * sizeof(off_t))) == NULL)*/)
         err(1, NULL);
 
     /* Do a suffix sort on the old file. */
-    qsufsort(I, V, old, oldsize);
+    I[0] = oldsize;
+    sais(oldp, I + 1, oldsize);
+    //qsufsort(I, V, old, oldsize);
 
-    free(V);
+    //free(V);
 
     /* Allocate newsize + 1 bytes instead of newsize bytes to ensure
         that we never try to malloc(0) and get a NULL pointer */
