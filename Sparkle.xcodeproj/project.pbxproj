@@ -178,6 +178,17 @@
 		767B61AC1972D488004E0C3C /* SUGuidedPackageInstaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 767B61AA1972D488004E0C3C /* SUGuidedPackageInstaller.h */; };
 		767B61AD1972D488004E0C3C /* SUGuidedPackageInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 767B61AB1972D488004E0C3C /* SUGuidedPackageInstaller.m */; };
 		767B61AE1972D488004E0C3C /* SUGuidedPackageInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 767B61AB1972D488004E0C3C /* SUGuidedPackageInstaller.m */; };
+		A2C087FF1B0949A6007AC5B9 /* libsporkel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C087FE1B0949A6007AC5B9 /* libsporkel.a */; };
+		A2C088021B094A26007AC5B9 /* SUSporkelUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C088001B094A26007AC5B9 /* SUSporkelUnarchiver.h */; };
+		A2C088031B094A26007AC5B9 /* SUSporkelUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C088011B094A26007AC5B9 /* SUSporkelUnarchiver.m */; };
+		A2C088091B095268007AC5B9 /* libboost-filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088041B095268007AC5B9 /* libboost-filesystem.a */; };
+		A2C0880A1B095268007AC5B9 /* libboost-iostreams.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088051B095268007AC5B9 /* libboost-iostreams.a */; };
+		A2C0880B1B095268007AC5B9 /* libboost-system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088061B095268007AC5B9 /* libboost-system.a */; };
+		A2C0880C1B095268007AC5B9 /* libbsdiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088071B095268007AC5B9 /* libbsdiff.a */; };
+		A2C0880D1B095268007AC5B9 /* libsodium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088081B095268007AC5B9 /* libsodium.a */; };
+		A2C088101B09529D007AC5B9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C0880E1B09529D007AC5B9 /* libc++.dylib */; };
+		A2C088111B09529D007AC5B9 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C0880F1B09529D007AC5B9 /* libc++abi.dylib */; };
+		A2C088131B0952C9007AC5B9 /* liblzma.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C088121B0952C9007AC5B9 /* liblzma.dylib */; };
 		F8761EB11ADC5068000C9034 /* SUCodeSigningVerifierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8761EB01ADC5068000C9034 /* SUCodeSigningVerifierTest.m */; };
 		F8761EB31ADC50EB000C9034 /* SparkleTestCodeSignApp.zip in Resources */ = {isa = PBXBuildFile; fileRef = F8761EB21ADC50EB000C9034 /* SparkleTestCodeSignApp.zip */; };
 		F8761EB61ADC5E7A000C9034 /* SUCodeSigningVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B078CD15A5FB6100600039 /* SUCodeSigningVerifier.m */; };
@@ -557,6 +568,17 @@
 		767B61AB1972D488004E0C3C /* SUGuidedPackageInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGuidedPackageInstaller.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Sparkle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sparkle-Info.plist"; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C087FE1B0949A6007AC5B9 /* libsporkel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsporkel.a; path = ../sporkel/build/sporkel/libsporkel.a; sourceTree = "<group>"; };
+		A2C088001B094A26007AC5B9 /* SUSporkelUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSporkelUnarchiver.h; sourceTree = "<group>"; };
+		A2C088011B094A26007AC5B9 /* SUSporkelUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSporkelUnarchiver.m; sourceTree = "<group>"; };
+		A2C088041B095268007AC5B9 /* libboost-filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost-filesystem.a"; path = "../sporkel/build/ext/boost/libboost-filesystem.a"; sourceTree = "<group>"; };
+		A2C088051B095268007AC5B9 /* libboost-iostreams.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost-iostreams.a"; path = "../sporkel/build/ext/boost/libboost-iostreams.a"; sourceTree = "<group>"; };
+		A2C088061B095268007AC5B9 /* libboost-system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost-system.a"; path = "../sporkel/build/ext/boost/libboost-system.a"; sourceTree = "<group>"; };
+		A2C088071B095268007AC5B9 /* libbsdiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbsdiff.a; path = ../sporkel/build/ext/libbsdiff.a; sourceTree = "<group>"; };
+		A2C088081B095268007AC5B9 /* libsodium.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsodium.a; path = ../sporkel/build/ext/libsodium.a; sourceTree = "<group>"; };
+		A2C0880E1B09529D007AC5B9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		A2C0880F1B09529D007AC5B9 /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
+		A2C088121B0952C9007AC5B9 /* liblzma.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.dylib; path = usr/lib/liblzma.dylib; sourceTree = SDKROOT; };
 		F8761EB01ADC5068000C9034 /* SUCodeSigningVerifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUCodeSigningVerifierTest.m; sourceTree = "<group>"; };
 		F8761EB21ADC50EB000C9034 /* SparkleTestCodeSignApp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SparkleTestCodeSignApp.zip; sourceTree = "<group>"; };
 		FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigFrameworkDebug.xcconfig; sourceTree = "<group>"; };
@@ -629,6 +651,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C088131B0952C9007AC5B9 /* liblzma.dylib in Frameworks */,
+				A2C088101B09529D007AC5B9 /* libc++.dylib in Frameworks */,
+				A2C088111B09529D007AC5B9 /* libc++abi.dylib in Frameworks */,
+				A2C088091B095268007AC5B9 /* libboost-filesystem.a in Frameworks */,
+				A2C0880A1B095268007AC5B9 /* libboost-iostreams.a in Frameworks */,
+				A2C0880B1B095268007AC5B9 /* libboost-system.a in Frameworks */,
+				A2C0880C1B095268007AC5B9 /* libbsdiff.a in Frameworks */,
+				A2C0880D1B095268007AC5B9 /* libsodium.a in Frameworks */,
+				A2C087FF1B0949A6007AC5B9 /* libsporkel.a in Frameworks */,
 				1495006E195FCE1100BC5B5B /* AppKit.framework in Frameworks */,
 				1495006F195FCE1800BC5B5B /* Foundation.framework in Frameworks */,
 				61177A1F0D1112E900749C97 /* IOKit.framework in Frameworks */,
@@ -676,6 +707,15 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2C088121B0952C9007AC5B9 /* liblzma.dylib */,
+				A2C0880E1B09529D007AC5B9 /* libc++.dylib */,
+				A2C0880F1B09529D007AC5B9 /* libc++abi.dylib */,
+				A2C088041B095268007AC5B9 /* libboost-filesystem.a */,
+				A2C088051B095268007AC5B9 /* libboost-iostreams.a */,
+				A2C088061B095268007AC5B9 /* libboost-system.a */,
+				A2C088071B095268007AC5B9 /* libbsdiff.a */,
+				A2C088081B095268007AC5B9 /* libsodium.a */,
+				A2C087FE1B0949A6007AC5B9 /* libsporkel.a */,
 				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
 				525A278F133D6AE900FD8D70 /* Cocoa.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
@@ -824,6 +864,7 @@
 		6101354A0DD25B7F0049ACDF /* Unarchiving */ = {
 			isa = PBXGroup;
 			children = (
+				A2C087FD1B09490F007AC5B9 /* Sporkel */,
 				5D06E8D90FD68C95005AE3F6 /* Binary Delta */,
 				6102FE480E07803800F85D09 /* SUDiskImageUnarchiver.h */,
 				6102FE490E07803800F85D09 /* SUDiskImageUnarchiver.m */,
@@ -978,6 +1019,15 @@
 			name = "Update Control";
 			sourceTree = "<group>";
 		};
+		A2C087FD1B09490F007AC5B9 /* Sporkel */ = {
+			isa = PBXGroup;
+			children = (
+				A2C088001B094A26007AC5B9 /* SUSporkelUnarchiver.h */,
+				A2C088011B094A26007AC5B9 /* SUSporkelUnarchiver.m */,
+			);
+			name = Sporkel;
+			sourceTree = "<group>";
+		};
 		FA1941C40D94A6EA00DD942E /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1068,7 @@
 				6160E7E10D3B4A8800E9CD71 /* NTSynchronousTask.h in Headers */,
 				61299B3609CB04E000B7442F /* Sparkle.h in Headers */,
 				61CFB3290E385186007A1735 /* Sparkle.pch in Headers */,
+				A2C088021B094A26007AC5B9 /* SUSporkelUnarchiver.h in Headers */,
 				61B5FC0D09C4FC8200B25A18 /* SUAppcast.h in Headers */,
 				61B5FC7009C51F4A00B25A18 /* SUAppcastItem.h in Headers */,
 				6120721209CC5C4B007FE0F6 /* SUAutomaticUpdateAlert.h in Headers */,
@@ -1499,6 +1550,7 @@
 				61299A8E09CA790200B7442F /* SUUnarchiver.m in Sources */,
 				61B5FCDE09C52A9F00B25A18 /* SUUpdateAlert.m in Sources */,
 				610134740DD250470049ACDF /* SUUpdateDriver.m in Sources */,
+				A2C088031B094A26007AC5B9 /* SUSporkelUnarchiver.m in Sources */,
 				612DCBB00D488BC60015DBEA /* SUUpdatePermissionPrompt.m in Sources */,
 				61B5F8EE09C4CE3C00B25A18 /* SUUpdater.m in Sources */,
 				61A354560DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.m in Sources */,
@@ -1774,6 +1826,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SPORKEL_INCLUDE_PATH}",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SPORKEL_LIB_PATH}/**",
+				);
+				SPORKEL_INCLUDE_PATH = "~/Documents/sporkel/sporkel/include";
+				SPORKEL_LIB_PATH = "~/Documents/sporkel/build/";
 			};
 			name = Debug;
 		};
@@ -1781,6 +1843,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941D50D94A70100DD942E /* ConfigFrameworkRelease.xcconfig */;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SPORKEL_INCLUDE_PATH}",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SPORKEL_LIB_PATH}/**",
+				);
+				SPORKEL_INCLUDE_PATH = "~/Documents/sporkel/sporkel/include";
+				SPORKEL_LIB_PATH = "~/Documents/sporkel/build/";
 			};
 			name = Release;
 		};
